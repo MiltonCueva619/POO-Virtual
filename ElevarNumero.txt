@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int elevar(int x, int y){
+	if (y == 1){
+		return  x;
+	}else 
+	return  x * elevar (x , y-1);
+}
+
+int mcd(int x, int y){
+	if (y == 0){
+		return  x;
+	}else 
+	return  mcd(y , x%y);
+}
+
+int main (){
+	int num, num2,num3;
+	
+	printf("Ingrese un numero\n");
+	scanf("%d", &num);
+	printf("Ingrese a que potencia desea elevar el numero\n");
+	scanf("%d", &num2);
+	
+	num3 = elevar(num, num2);
+	printf("El numero %d elevado a %d es igual %d", num, num2, num3);
+	
+}
+
